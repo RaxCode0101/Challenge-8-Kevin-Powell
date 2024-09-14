@@ -1,0 +1,364 @@
+/* Challenge
+
+   Make the navigation layout work
+   on both mobile and large screens.
+
+   Mobile-first, so mobile styles first,
+   then add the large screen styles
+   inside the existing media query
+
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.hero h1 {
+font-size: 90px;
+    margin-top: 0;
+line-height: 1;
+}
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+ubahwarnah1 {color: #A59678;}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase; 
+    color: #fff;
+    font-weight: 900;
+    background-color: #A59678;
+    padding: .75em 2em;
+    border-radius: 100px;
+font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+	font-size: 24px;
+}
+
+.nav__link:hover, 
+.nav__link:focus {
+	opacity: 0.75;
+}
+
+/* .btn:hover,
+.btn:focus {
+    opacity: .75; 
+}*/
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* added for nav-toggle positioning */
+    position: relative;
+}
+
+header {
+    background: #2E323F;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav li {
+	list-style: none;
+	line-height: 3;
+}
+
+.nav li a {
+	text-decoration: none;
+	color: #DFDFE1;
+	text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+	font-size: 18px;
+}
+
+a.nav__link.nav__link--button {
+	color: #fff;
+	background: #A59678;
+	border-radius: 40px;
+	padding: 10px 20px;
+}
+
+
+
+.nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 50%;
+    background: #072A2D;
+    color: white;
+    transition: opacity 250ms ease;
+    
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+/* made changes here from video
+   to make it more accessible.
+   
+   Works the same :) */
+.nav {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+}
+
+.nav--visible {
+    visibility: visible;
+    height: auto;
+    position: relative;
+} 
+
+
+.logo {
+    height: 30px;
+	margin: auto;
+fill: #6F737F;
+}
+
+
+.hero {
+    padding: 100px 0;
+    background-color: #3B4050;
+    color: #FFF;
+}
+
+.hero__img {
+    margin-top: 2em;
+}
+
+
+.hero p, .two p, .sidebar p, .four p {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.hero p {
+color: #DFDFE1;
+margin-bottom: 3em;
+font-size: 24px;
+}
+
+.two {
+background: #F1F1F1;
+display: flex;
+padding: 4em 6em;
+padding-bottom: 6em;
+gap: 4em;
+}
+
+.two h2, .sidebar h2, .four h2 {
+font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+text-align: center;
+}
+
+.two h2, .four h2 {
+color: #A59678;
+}
+
+.two h2 {
+font-size: 30px;
+}
+
+.two p {
+	font-size: 18px;
+text-align: center;
+display: flex;
+margin: auto;
+width: 100%;
+}
+
+.main {
+    margin-top: 3em;
+margin-bottom: 0.1em;
+}
+
+.section-title {
+color: #A59678;
+font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+text-align: left;
+}
+
+.four {
+background: #3B4050;
+padding: 2em 6em;
+}
+
+.four .row div {
+width: 50%;
+}
+
+.four h2 {
+text-align: left;
+}
+
+.four ul {list-style: none;
+}
+
+.four ul li a {
+text-decoration: none;
+
+}
+
+.four h1 {
+color: #fff;
+font-size: 48px;
+text-align: center;
+}
+
+.four h2 {
+font-size: 21px;
+}
+
+.four p, .four ul li a {
+font-size: 16px;
+color: #6F737F;
+}
+
+.sidebar {
+padding: 0em;
+}
+
+.sidebar p {
+padding: 0em 4em;
+padding-bottom: 4em;
+}
+
+.sidebar div {
+    text-align: center;
+color: #fff;
+background-color: #3B4050;
+}
+
+.sidebar h2 {
+font-size: 30px;
+padding-top: 1.5em;
+}
+
+.sidebar p {
+font-size: 16px;
+}
+
+@media (min-width: 800px) {
+
+    
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav {
+        visibility: visible;
+        display: flex;
+	align-items: center;
+	justify-content: flex-end;
+        height: auto;
+	position: relative;
+    }
+
+.nav__list {
+	display: flex;
+	margin: 0;
+}
+
+.nav__item {
+	margin: 0 0 0 1.5em;
+}
+
+    .row {
+        display: flex;
+        justify-content: space-evenly;
+.    }
+
+    .hero__text {
+        min-width: 62%;
+	display: flex;
+    }
+    
+    .hero__img {
+        width: 100%;
+        align-self: flex-start;
+        margin: 0;
+padding: 2em;
+    }
+    
+    .primary-content {
+        width: 62%;
+    }
+
+    .sidebar {
+        width: 32%;
+    }
+    
+    
+}
